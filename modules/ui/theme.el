@@ -7,9 +7,7 @@
 (require 'use-package)
 
 (use-package remember-last-theme
-  :straight t
-  :config (remember-last-theme-enable)
-)
+  :config (remember-last-theme-enable))
 
 (use-package doom-themes)
 
