@@ -10,11 +10,11 @@
 (require 'ui/theme)
 (require 'ui/modeline)
 (require 'ui/misc)
+(require 'ui/dashboard)
 
 (require 'editor/counsel)
 (require 'editor/completion)
 (require 'editor/lsp)
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

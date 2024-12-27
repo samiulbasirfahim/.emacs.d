@@ -25,3 +25,18 @@
   (lsp-mode   . lsp-enable-which-key-integration)
   :commands lsp)
 
+(defun my-enable-company-mode ()
+  "Enable company-mode for Emacs Lisp files."
+  (company-mode 1))
+
+(add-hook 'emacs-lisp-mode-hook 'my-enable-company-mode)
+
+
+(use-package flycheck
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
+
+
+(provide 'editor/lsp)
+;;; lsp.el ends here
