@@ -4,6 +4,8 @@
   :straight t
   :init
   (setq rust-mode-treesitter-derive t)
+  :config
+  (setq lsp-rust-analyzer-cargo-watch-command "clippy")
   :general
   (run-leader-definer
     :keymaps 'lsp-mode-map

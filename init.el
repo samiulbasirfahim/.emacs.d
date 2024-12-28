@@ -23,6 +23,7 @@
 (require 'lang/c)
 (require 'lang/org)
 (require 'lang/rust)
+(require 'lang/tsx)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

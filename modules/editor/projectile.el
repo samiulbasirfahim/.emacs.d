@@ -19,13 +19,13 @@
   (global-definer
     "p" '(:keymap projectile-command-map :package projectile :wk "project")))
 
-;; (use-package rg
-;;   :straight t
-;;   :config
-;;   (rg-menu-transient-insert "Manage" "e" "Edit" 'wgrep-change-to-wgrep-mode)
-;;   :general
-;;   (global-definer
-;;     "r" '(rg-menu :wk "rg")))
+(use-package rg
+  :straight t
+  :config
+  (rg-menu-transient-insert "Manage" "e" "Edit" 'wgrep-change-to-wgrep-mode)
+  :general
+  (global-definer
+    "r" '(rg-menu :wk "rg")))
 
 (global-definer "SPC" '(projectile-find-file-dwim :wk "find file"))
 

@@ -10,7 +10,6 @@
   :config (remember-last-theme-enable))
 
 (use-package doom-themes)
-(use-package ef-themes)
 (use-package catppuccin-theme)
 
 ;; (straight-use-package

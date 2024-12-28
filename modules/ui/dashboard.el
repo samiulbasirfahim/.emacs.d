@@ -9,7 +9,7 @@
   :straight t
   :config
   (dashboard-setup-startup-hook))
-(setq dashboard-items '((recents   . 3)
+(setq dashboard-items '((recents   . 5)
                         (bookmarks . 3)
                         ;; (agenda    . 3)
                         ))
