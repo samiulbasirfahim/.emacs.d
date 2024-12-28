@@ -4,6 +4,15 @@
 
 ;;; Code:
 (require 'use-package)
+(require 'core/keybinds)
+
+
+(general-create-definer lsp-leader-definer
+  :states '(normal motion visual)
+  :wrapping global-definer
+  :prefix "SPC l"
+  "" '(:ignore t :which-key "mode"))
+
 
 (use-package lsp-mode
   :straight t
@@ -23,6 +32,22 @@
   (c++-mode   . lsp)
   (lua-mode   . lsp)
   (lsp-mode   . lsp-enable-which-key-integration)
+
+  :general
+  (lsp-leader-definer
+   :keymaps 'lsp-mode-map
+   "a" '(lsp-execute-code-action :wk "code action")
+   "gd" '(lsp-find-declaration :wk "goto declaration")
+   "gi" '(lsp-find-implementation :wk "goto implementation")
+   "gr" '(lsp-find-references :wk "find references")
+   "gD" '(lsp-find-definition :wk "go definition")
+   "gp" '(xref-go-back :wk "go back")
+   "gn" '(xref-go-forward :wk "go next"))
+  (general-define-key
+   :states 'normal
+   :keymaps 'lsp-mode-map
+   "K" 'lsp-describe-thing-at-point)
+
   :commands lsp)
 
 (defun my-enable-company-mode ()
@@ -31,12 +56,16 @@
 
 (add-hook 'emacs-lisp-mode-hook 'my-enable-company-mode)
 
+(use-package apheleia
+  :straight t
+  :general
+  (lsp-leader-definer
+   :keymaps 'lsp-mode-map
+   "f" '(apheleia-format-buffer :wk "Format buffer"))
 
-(use-package flycheck
   :config
-  (add-hook 'after-init-hook #'global-flycheck-mode))
-
-
+  (setf (alist-get 'clang-format apheleia-formatters)
+        '("clang-format" "--style={IndentWidth: 4}")))
 
 (provide 'editor/lsp)
 ;;; lsp.el ends here

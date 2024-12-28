@@ -15,5 +15,9 @@
   :init
   (doom-modeline-mode 1))
 
+(use-package all-the-icons
+  :ensure t
+  :after  doom-modeline)
+
 (provide 'ui/modeline)
 ;;; modeline.el ends here

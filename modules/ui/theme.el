@@ -11,6 +11,5 @@
 
 (use-package doom-themes)
 
-
 (provide 'ui/theme)
 ;;; theme.el ends here

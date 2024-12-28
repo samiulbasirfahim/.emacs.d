@@ -15,6 +15,11 @@
 (require 'editor/counsel)
 (require 'editor/completion)
 (require 'editor/lsp)
+(require 'editor/checker)
+(require 'editor/keybinds)
+(require 'editor/projectile)
+
+(require 'lang/c)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

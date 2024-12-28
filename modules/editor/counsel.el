@@ -14,12 +14,20 @@
   :bind (("M-s" . swiper)
          :map ivy-minibuffer-map
          ("C-l" . ivy-alt-done)
+         ("M-l" . ivy-alt-done)
          ("C-j" . ivy-next-line)
          ("C-k" . ivy-previous-line)
+         ("M-j" . ivy-next-line)
+         ("M-k" . ivy-previous-line)
          :map ivy-switch-buffer-map
-         ("C-k" . ivy-previous-line)
          ("C-l" . ivy-done)
-         ("C-d" . ivy-switch-buffer-kill)
+         ("M-l" . ivy-done)
+         ("C-j" . ivy-next-line)
+         ("C-k" . ivy-previous-line)
+         ("M-j" . ivy-next-line)
+         ("M-k" . ivy-previous-line)
+         ("C-h" . ivy-switch-buffer-kill)
+         ("M-h" . ivy-switch-buffer-kill)
          :map ivy-reverse-i-search-map
          ("C-k" . ivy-previous-line)
          ("C-d" . ivy-reverse-i-search-kill))
@@ -41,6 +49,7 @@
   "d" '(counsel-dired :wk "Counsel dired")
   "j" '(dired-jump :wk "Dired jump")
   "r" '(counsel-recentf :wk "recent file")
+  "t" '(counsel-load-theme :wk "recent file")
   "s" '(write-file :wk "save file")
 )
 
