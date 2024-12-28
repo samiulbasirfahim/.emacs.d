@@ -1,7 +1,6 @@
 (add-hook 'prog-mode-hook
           (lambda()
-            (setq treesit-font-lock-level 4
-                  c-ts-mode-indent-style 'k&r
+            (setq treesit-font-lock-level 4 c-ts-mode-indent-style 'k&r
                   c-ts-mode-indent-offset 4)))
 
 
@@ -16,11 +15,11 @@
   (setq tab-width 4)
 )
 
-(setq treesit-language-source-alist
-      '((cpp "https://github.com/tree-sitter/tree-sitter-cpp")
-        (c "https://github.com/tree-sitter/tree-sitter-c")
-        (rust "https://github.com/tree-sitter/tree-sitter-rust")
-        ))
+(add-to-list 'treesit-language-source-alist
+	     '(cpp . ("https://github.com/tree-sitter/tree-sitter-cpp")))
+
+(add-to-list 'treesit-language-source-alist
+	     '(c . ("https://github.com/tree-sitter/tree-sitter-c")))
 
 (provide 'lang/c)
 ;;; c.el ends here

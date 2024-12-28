@@ -37,6 +37,9 @@
   (c-ts-mode     . lsp)
   (c++-ts-mode   . lsp)
   (rust-ts-mode  . lsp)
+  (typescript-ts-mode . lsp)
+  (tsx-ts-mode . lsp)
+  (css-ts-mode . lsp)
   (lsp-mode   . lsp-enable-which-key-integration)
 
   :general

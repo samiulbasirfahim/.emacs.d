@@ -8,7 +8,7 @@
 
 
 (delete-selection-mode 1)
-(electric-pair-mode 1) 
+(electric-pair-mode 1)
 (global-visual-line-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -48,6 +48,7 @@
 (setq tab-width 4)
 (setq tab-stop-list (rxen/generate-tab-stops 4))
 (setq-default indent-tabs-mode nil)
+
 
 (provide 'core/sanity)
 ;;; sanity.el ends here

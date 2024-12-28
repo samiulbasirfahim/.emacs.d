@@ -3,4 +3,8 @@ eln-cache
 auto-save-list
 elpa
 recentf
-last_theme
+.cache
+.lsp-session-v1
+projectile-bookmarks.eld
+transient
+tree-sitter
