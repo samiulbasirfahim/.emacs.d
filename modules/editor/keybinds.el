@@ -1,4 +1,32 @@
 ;; Buffers.
+(require 'use-package)
+
+(use-package ace-window)
+;; Windows.
+(general-create-definer window-menu-definer
+  :wrapping global-definer
+  :prefix "SPC w"
+  "" '(:ignore t :wk "window"))
+
+(window-menu-definer
+  "w" '(ace-window :wk "select window")
+  "h" '(evil-window-left :wk "left")
+  "j" '(evil-window-down :wk "down")
+  "k" '(evil-window-up :wk "up")
+  "l" '(evil-window-right :wk "right")
+  "H" '(evil-window-decrease-width :wk "Width-")
+  "J" '(evil-window-decrease-height :wk "Height-")
+  "K" '(evil-window-increase-height :wk "Height+")
+  "L" '(evil-window-increase-width :wk "Width+")
+  "v" '(evil-window-vsplit :wk "vertical split")
+  "s" '(evil-window-split :wk "horizontal split")
+  "q" '(evil-window-delete :wk "close")
+  "d" '(delete-other-windows :wk "close other")
+  "f" '(toggle-frame-fullscreen :wk "toggle fullscreen")
+  "=" '(balance-windows :wk "balance windows"))
+
+
+
 (general-create-definer buffer-menu-definer
   :states '(normal motion)
   :wrapping global-definer

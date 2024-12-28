@@ -1,3 +1,10 @@
+;;; counsel.el --- -*- lexical-binding: t; -*-
+;;; Commentary:
+;; make search easier
+
+;;; Code:
+
+(require 'core/keybinds)
 (require 'recentf)
 (recentf-mode 1)
 
@@ -46,12 +53,14 @@
 
 (file-menu-definer
   "f" '(counsel-find-file :wk "find file")
+  "b" '(counsel-bookmark :wk "find file")
   "d" '(counsel-dired :wk "Counsel dired")
-  "j" '(dired-jump :wk "Dired jump")
+  "D" '(dired-jump :wk "Dired jump")
   "r" '(counsel-recentf :wk "recent file")
   "t" '(counsel-load-theme :wk "recent file")
   "s" '(write-file :wk "save file")
 )
+
 
 
 

@@ -6,11 +6,19 @@
 (require 'use-package)
 (require 'core/keybinds)
 
+(global-unset-key (kbd "K"))
 
 (general-create-definer lsp-leader-definer
   :states '(normal motion visual)
   :wrapping global-definer
   :prefix "SPC l"
+  "" '(:ignore t :which-key "mode"))
+
+
+(general-create-definer run-leader-definer
+  :states '(normal motion visual)
+  :wrapping global-definer
+  :prefix "SPC r"
   "" '(:ignore t :which-key "mode"))
 
 
@@ -26,11 +34,9 @@
   (setq lsp-enable-on-type-formatting t)
   (setq lsp-headerline-breadcrumb-enable nil)
   :hook
-  (c-mode     . lsp)
-  (lisp-mode  . lsp)
-  (rust-mode  . lsp)
-  (c++-mode   . lsp)
-  (lua-mode   . lsp)
+  (c-ts-mode     . lsp)
+  (c++-ts-mode   . lsp)
+  (rust-ts-mode  . lsp)
   (lsp-mode   . lsp-enable-which-key-integration)
 
   :general

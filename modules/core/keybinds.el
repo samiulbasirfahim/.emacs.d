@@ -1,3 +1,9 @@
+;;; keybinds.el --- -*- lexical-binding: t; -*-
+
+;;; Commentary:
+;; keybinds
+
+;;; Code:
 (require 'use-package)
 
 (use-package general

@@ -10,6 +10,14 @@
   :config (remember-last-theme-enable))
 
 (use-package doom-themes)
+(use-package ef-themes)
+(use-package catppuccin-theme)
+
+;; (straight-use-package
+;;  '(kanagawa
+;;    :host github
+;;    :repo "emacsmirror/kanagawa-themes"
+;;    :branch "main"))
 
 (provide 'ui/theme)
 ;;; theme.el ends here

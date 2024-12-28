@@ -1,3 +1,10 @@
+;;; dashboard.el --- -*- lexical-binding: t; -*-
+
+;;; Commentary:
+;; dashboard
+
+;;; Code:
+
 (use-package dashboard
   :straight t
   :config
