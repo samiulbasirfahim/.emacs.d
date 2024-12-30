@@ -4,8 +4,8 @@
 ;; disable and enable basic funtionality
 ;;; Code:
  
-(use-package elcord)
-(elcord-mode)
+;; (use-package elcord)
+;; (elcord-mode)
 
 
 (scroll-bar-mode -1)
@@ -22,9 +22,21 @@
 (setq display-line-numbers-type 'relative)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
+;; Set default font to Rxen Sans
+(set-face-attribute 'default nil
+                    :family "Rxen Sans"
+                    :height 180) ;; Adjust height as needed
 
-(add-to-list 'default-frame-alist
-             '(font . "Iosevka Custom-18"))
+;; Set font for Unicode symbols (Nerd Font)
+(when (member "Symbols Nerd Font" (font-family-list))
+  (set-fontset-font t 'unicode "Symbols Nerd Font" nil 'append))
+
+;; Optional: Improve performance by limiting fontset fallback
+(setq inhibit-compacting-font-caches t)
+
+
+;; (add-to-list 'default-frame-alist
+;;              '(font . "Rxen Sans-18"))
 
 (provide 'ui/misc)
 ;;; misc.el ends here
