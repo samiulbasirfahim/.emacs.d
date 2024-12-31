@@ -43,16 +43,18 @@ Don't mess with special buffers."
 
 (buffer-menu-definer
   "b" '(switch-to-buffer :wk "switch buffer")
-  "d" '(kill-current-buffer :wk "kill buffer")
+  "q" '(kill-current-buffer :wk "kill buffer")
   "D" '(rxen/kill-other-buffers :wk "kill other buffers"))
 
 (global-definer
   "," '(switch-to-buffer :wk "switch buffer")
+  "q" '(kill-current-buffer :wk "kill buffer")
+  "a" '(org-agenda :wk "Org agenda")
 )
 
-(define-key evil-normal-state-map (kbd "<tab>") 'centaur-tabs-forward-tab)
+(define-key evil-normal-state-map (kbd "L") 'centaur-tabs-forward-tab)
 (define-key evil-normal-state-map (kbd "C-<tab>") 'centaur-tabs-toggle-groups)
-(define-key evil-normal-state-map (kbd "<backtab>") 'centaur-tabs-backward-tab)
+(define-key evil-normal-state-map (kbd "H") 'centaur-tabs-backward-tab)
 
 ;; More stuff.
 (evil-collection-compile-setup)
