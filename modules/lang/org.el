@@ -8,6 +8,7 @@
 (use-package org
   :config
   (setq org-agenda-start-with-log-mode t)
+  (setq org-agenda-files (directory-files-recursively "~/docs/notes/agenda/" "\\.org$"))
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
   (setq org-ellipsis "..."
@@ -47,7 +48,7 @@
   (org-leader-definer
     :keymaps 'org-mode-map
     "t" '(org-todo :wk "Org todo")
-    "T" '(org-todo-list :wk "Org todo list")
+    "T" '(counsel-org-tag :wk "Org todo list")
     "m" '(org-modern-mode :wk "Toggle org modern mode")
     "p" '(org-set-property :wk "Toggle set property")
     "t" '(org-todo :wk "Org todo")))
@@ -64,6 +65,11 @@
     ("n" "Next Tasks"
      ((todo "NEXT"
         ((org-agenda-overriding-header "Next Tasks")))))
+
+
+    ("p" "Planned Tasks"
+     ((todo "PLAN"
+        ((org-agenda-overriding-header "Planned Tasks")))))
 
 
     ("l" "Learn Tasks"

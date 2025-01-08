@@ -6,8 +6,6 @@
 (require 'use-package)
 (require 'core/keybinds)
 
-(global-unset-key (kbd "K"))
-
 (general-create-definer lsp-leader-definer
   :states '(normal motion visual)
   :wrapping global-definer
@@ -37,9 +35,7 @@
   (c-ts-mode     . lsp)
   (c++-ts-mode   . lsp)
   (rust-ts-mode  . lsp)
-  (typescript-ts-mode . lsp)
-  (tsx-ts-mode . lsp)
-  (css-ts-mode . lsp)
+  (nix-ts-mode . lsp)
   (lsp-mode   . lsp-enable-which-key-integration)
 
   :general
@@ -52,11 +48,6 @@
    "gD" '(lsp-find-definition :wk "go definition")
    "gp" '(xref-go-back :wk "go back")
    "gn" '(xref-go-forward :wk "go next"))
-  (general-define-key
-   :states 'normal
-   :keymaps 'lsp-mode-map
-   "K" 'lsp-describe-thing-at-point)
-
   :commands lsp)
 
 (defun my-enable-company-mode ()

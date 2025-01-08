@@ -52,9 +52,10 @@ Don't mess with special buffers."
   "a" '(org-agenda :wk "Org agenda")
 )
 
-(define-key evil-normal-state-map (kbd "L") 'centaur-tabs-forward-tab)
 (define-key evil-normal-state-map (kbd "C-<tab>") 'centaur-tabs-toggle-groups)
 (define-key evil-normal-state-map (kbd "H") 'centaur-tabs-backward-tab)
+(define-key evil-normal-state-map (kbd "L") 'centaur-tabs-forward-tab)
+(define-key evil-normal-state-map (kbd ":") 'counsel-M-x)
 
 ;; More stuff.
 (evil-collection-compile-setup)

@@ -66,17 +66,12 @@
 
 (use-package nerd-icons-dired
   :hook (dired-mode . (lambda () (nerd-icons-dired-mode t))))
-
 (use-package nerd-icons-ibuffer
   :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
-
 (use-package ivy-rich ;; This gets us descriptions in M-x.
   :init (ivy-rich-mode 1))
-
 (use-package nerd-icons-ivy-rich ;; Adds icons to M-x.
   :init (nerd-icons-ivy-rich-mode 1))
-
-
 
 (provide 'editor/counsel)
 ;;; counsel.el ends here
