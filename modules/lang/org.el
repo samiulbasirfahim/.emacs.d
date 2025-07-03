@@ -8,14 +8,14 @@
 (use-package org
   :config
   (setq org-agenda-start-with-log-mode t)
-  (setq org-agenda-files (directory-files-recursively "~/docs/notes/agenda/" "\\.org$"))
+  (setq org-agenda-span 7)
+  (setq org-agenda-start-on-weekday nil)
+  (setq org-agenda-files (directory-files-recursively "~/docs/agenda/" "\\.org$"))
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
   (setq org-ellipsis "..."
         org-hide-emphasis-markers t
-        org-hide-leading-stars t
-        org-agenda-files (append
-                          (file-expand-wildcards "~/notes/*.org")))
+        org-hide-leading-stars t)
 
   (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)

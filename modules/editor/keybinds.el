@@ -1,6 +1,24 @@
 ;; Buffers.
 (require 'use-package)
 
+
+(defun rxen/org-reset-checkboxes-in-current-buffer-habits ()
+  "Uncheck all checkboxes in habit entries in the current buffer."
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    ;; Loop over all headings with STYLE=habit
+    (org-map-entries
+     (lambda ()
+       ;; Restrict to the subtree
+       (org-narrow-to-subtree)
+       (goto-char (point-min))
+       ;; Iterate over all checkbox lines and uncheck them
+       (while (re-search-forward "^- \\[X\\]" nil t)
+         (replace-match "- [ ]"))
+       (widen))
+     "/+STYLE=\"habit\"" 'file)))
+
 (use-package ace-window)
 ;; Windows.
 (general-create-definer window-menu-definer
@@ -44,6 +62,7 @@ Don't mess with special buffers."
 (buffer-menu-definer
   "b" '(switch-to-buffer :wk "switch buffer")
   "q" '(kill-current-buffer :wk "kill buffer")
+  "r" '(rxen/org-reset-checkboxes-in-current-buffer-habits :wk "Reset all checkboxes")
   "D" '(rxen/kill-other-buffers :wk "kill other buffers"))
 
 (global-definer
